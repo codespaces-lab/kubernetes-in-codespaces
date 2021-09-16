@@ -1,0 +1,64 @@
+{
+	"name": "Kubernetes-in-Codespaces",
+	"dockerFile": "Dockerfile",
+
+	// do not change these if you want Docker in Docker support
+	"runArgs": ["--init", "--privileged"],
+	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
+	"overrideCommand": false,
+
+	// some base images require a specific user name
+	"remoteUser": "vscode",
+
+	// Set container specific settings
+	"settings": {
+		"terminal.integrated.defaultProfile.linux": "zsh"
+	},
+
+	"hostRequirements": {
+		"cpus": 4
+	},
+	
+	// forward ports for the app
+	"forwardPorts": [
+		3500,
+		5000,
+		9411,
+		30000,
+		30080,
+		30088,
+		32000
+	],
+
+	// add labels
+	"portsAttributes": {
+		"3500": { "label": "dapr" },
+		"5000": { "label": "weather" },
+		"9411": { "label": "Zipkin" },
+		"30000": { "label": "Prometheus" },
+		"30080": { "label": "ngsa-app" },
+		"30088": { "label": "WebV" },
+		"32000": { "label": "Grafana" },
+	},
+
+	// Install extensions
+	"extensions": [
+		"ms-dotnettools.csharp",
+		"ms-azuretools.vscode-docker",
+		"ms-azuretools.vscode-dapr",
+		"ms-kubernetes-tools.vscode-kubernetes-tools",
+		"davidanson.vscode-markdownlint",
+		"gruntfuggly.todo-tree",
+		"mutantdino.resourcemonitor",
+		"humao.rest-client"
+	],
+
+	// Use 'onCreateCommand' to run commands as part of container creation.
+	"onCreateCommand": "/bin/bash -c .devcontainer/on-create.sh",
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "/bin/bash -c .devcontainer/post-create.sh",
+
+	// Use 'postStartCommand' to run commands after the container starts.
+	"postStartCommand": "/bin/bash -c .devcontainer/post-start.sh"
+}
