@@ -3,6 +3,18 @@
 		{
 			"name": "k8s",
 			"path": "."
+		},
+		{
+			"name": "components",
+			"path": "/home/vscode/.dapr/components"
+		},
+		{
+			"name": "webv",
+			"path": "../webvalidate"
+		},
+		{
+			"name": "ngsa-app",
+			"path": "../ngsa-app"
 		}
 	],
 	"settings": {}
