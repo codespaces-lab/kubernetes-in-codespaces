@@ -128,7 +128,7 @@ jumpbox :
 	# start a jumpbox pod
 	@-kubectl delete pod jumpbox --ignore-not-found=true
 
-	@kubectl run jumpbox --image=ghcr.io/retaildevcrews/alpine --restart=Always -- /bin/sh -c "trap : TERM INT; sleep 9999999999d & wait"
+	@kubectl run jumpbox --image=ghcr.io/cse-labs/jumpbox --restart=Always -- /bin/sh -c "trap : TERM INT; sleep 9999999999d & wait"
 	@kubectl wait pod jumpbox --for condition=ready --timeout=30s
 
 	###### If you get an error after this  ####
