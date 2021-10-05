@@ -6,7 +6,7 @@
 
 ## Overview
 
-This is a template that will setup a Kubernetes developer cluster using `k3d` in a `GitHub Codespace` or local `Dev Container`
+This is a repo that will setup a Kubernetes developer cluster using `k3d` in a `GitHub Codespace` or local `Dev Container`
 
 We use this for `inner-loop` Kubernetes development. Note that it is not appropriate for production use but is a great `Developer Experience`. Feedback calls the approach `game-changing` - we hope you agree!
 
@@ -20,38 +20,20 @@ Please experiment and add any issues to the GitHub Discussion. We LOVE PRs!
 
 The motivation for creating and using Codespaces is highlighted by this [GitHub Blog Post](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/). "It eliminated the fragility and single-track model of local development environments, but it also gave us a powerful new point of leverage for improving GitHub’s developer experience."
 
-## Create your repo
-
-> You must have access to Codespaces as an individual or part of a GitHub Team or GitHub Enterprise Cloud
->
-> If you are a member of this GitHub organization, you can skip this step and open with Codespaces
-
-Create your repo from this template and add your application code
-
-- Click the `Use this template` button
-- Enter your repo details
+Cory Wilkerson, Senior Director of Engineering at GitHub, recorded a podcast where he shared the GitHub journey to [Codespaces](https://changelog.com/podcast/459)
 
 ## Open with Codespaces
-
-> Note this screen shot is a little out of date with the released version of Codespaces
->
-> We LOVE PRs ... :)
 
 - Click the `Code` button on your repo
 - Click `Open with Codespaces`
 - Click `New Codespace`
 - Choose the `4 core` option
-  - 2 core isn't enough to run everything well
 
 ![Create Codespace](./images/OpenWithCodespaces.jpg)
 
 ## Open Workspace
 
-> Important!
->
-> Another late change - wait until the Codespace is ready before opening the workspace
->
-> We LOVE PRs ... :)
+> Important - wait until the Codespace is ready before opening the workspace
 
 - When prompted, choose `Open Workspace`
 
@@ -151,6 +133,54 @@ A `jump box` pod is created so that you can execute commands `in the cluster`
   - Begin typing NgsaAppDuration_bucket in the `Expression` search
   - Click `Execute`
   - This will display the `histogram` that Grafana uses for the charts
+
+## How to expose a Service via a NodePort
+
+> Note: you have to make the changes before you run `make all`
+
+### Forward the NodePort on Codespaces
+
+> Goal: The steps needed to make the Grafana dashboard accessible via a Codespaces forwarded port
+
+- Open `.devcontainer/devcontainer.json`
+- Add port 32000 to `forwardPorts`
+- Add the port label `"32000": { "label": "Grafana" }` to `portsAttributes`
+- Verify `Grafana (32000)` in the `Ports` tab of the Terminal view
+
+### Set the NodePort on Grafana's deployed service
+
+- Open `deploy/grafana/deployment.yaml`
+- In the configs for `kind: service`, set the ports
+  - This example forwards local port 3000 to NodePort 32000
+
+```yaml
+
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 32000
+
+```
+
+### Expose the NodePort from k3d to localhost
+
+- Open `deploy/k3d.yaml`
+- Under `ports` map nodePort 32000 to local port 32000
+- Under `- port: 32000:32000` add the nodeFilter, `server[0]`
+  - Explanation
+    - There is only one node, which has the Grafana pod
+    - That node in the cluster is server node 0 (aka server[0])
+    - The node filter indicates which node to send traffic to
+    - For multi-node clusters, you have to update
+
+```yaml
+
+ports:
+  - port: 32000:32000
+    nodeFilters:
+      - server[0]
+
+```
 
 ## Launch Grafana Dashboard
 
