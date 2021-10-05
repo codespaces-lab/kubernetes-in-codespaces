@@ -6,7 +6,7 @@
 
 ## Overview
 
-This is a template that will setup a Kubernetes developer cluster using `k3d` in a `GitHub Codespace` or local `Dev Container`
+This is a repo that will setup a Kubernetes developer cluster using `k3d` in a `GitHub Codespace` or local `Dev Container`
 
 We use this for `inner-loop` Kubernetes development. Note that it is not appropriate for production use but is a great `Developer Experience`. Feedback calls the approach `game-changing` - we hope you agree!
 
@@ -22,38 +22,18 @@ The motivation for creating and using Codespaces is highlighted by this [GitHub 
 
 Cory Wilkerson, Senior Director of Engineering at GitHub, recorded a podcast where he shared the GitHub journey to [Codespaces](https://changelog.com/podcast/459)
 
-## Create your repo
-
-> You must have access to Codespaces as an individual or part of a GitHub Team or GitHub Enterprise Cloud
->
-> If you are a member of this GitHub organization, you can skip this step and open with Codespaces
-
-Create your repo from this template and add your application code
-
-- Click the `Use this template` button
-- Enter your repo details
-
 ## Open with Codespaces
-
-> Note this screen shot is a little out of date with the released version of Codespaces
->
-> We LOVE PRs ... :)
 
 - Click the `Code` button on your repo
 - Click `Open with Codespaces`
 - Click `New Codespace`
 - Choose the `4 core` option
-  - 2 core isn't enough to run everything well
 
 ![Create Codespace](./images/OpenWithCodespaces.jpg)
 
 ## Open Workspace
 
-> Important!
->
-> Another late change - wait until the Codespace is ready before opening the workspace
->
-> We LOVE PRs ... :)
+> Important - wait until the Codespace is ready before opening the workspace
 
 - When prompted, choose `Open Workspace`
 
