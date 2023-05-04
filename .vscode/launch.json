@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "daprd-debug",
-            "program": "${workspaceFolder}/weather/bin/Debug/net5.0/weather.dll",
+            "program": "${workspaceFolder}/weather/bin/Debug/net5.0/bs.services.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,

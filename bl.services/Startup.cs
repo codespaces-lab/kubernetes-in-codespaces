@@ -11,7 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace weather
+namespace snff.bl
 {
     public class Startup
     {
@@ -26,10 +26,9 @@ namespace weather
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().AddDapr();
-            services.AddSwaggerGen(c =>
+            services.AddControllers().AddDapr().AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "weather", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "bellaluna", Version = "v1" });
             });
         }
 
@@ -38,17 +37,16 @@ namespace weather
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "weather v1"));
+                app.UseDeveloperExceptionPage()
+                .UseSwagger()
+                .UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "weather v1"));
             }
 
-            app.UseRouting();
-
-            app.UseAuthorization();
-            app.UseCloudEvents();
-
-            app.UseEndpoints(endpoints =>
+            app
+            .UseRouting()
+            .UseAuthorization()
+            .UseCloudEvents()
+            .UseEndpoints(endpoints =>
             {
                 endpoints.MapSubscribeHandler();
                 endpoints.MapControllers();
