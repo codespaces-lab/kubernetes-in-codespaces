@@ -1,6 +1,7 @@
 namespace snff.bl.metal
 {
-    internal interface IMove
+    public interface IMove
     {
+
     }
 }

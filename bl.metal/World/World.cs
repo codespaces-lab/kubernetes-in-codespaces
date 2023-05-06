@@ -5,9 +5,25 @@ namespace snff.bl.metal;
 
 public class World : IWorld, IThink
 {
-    public int AddEntity<T>(IAgentEntity<T> agent) 
+
+    public World()
     {
-        return 0;
+
+    }
+
+    T IWorld.AddEntity<T>(T entity)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    T IWorld.GetEntity<T>(int id)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    T IWorld.RemoveEntity<T>(T entity)
+    {
+        throw new System.NotImplementedException();
     }
 
     Task<IThink.IResult> IThink.Think()

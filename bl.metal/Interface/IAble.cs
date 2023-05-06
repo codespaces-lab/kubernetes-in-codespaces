@@ -1,6 +1,6 @@
 namespace snff.bl.metal
 {
-    internal interface IAble
+    public interface IAble
     {
     }
 }
