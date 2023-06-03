@@ -6,9 +6,11 @@ namespace snff.bl.metal
 {
     public interface IWorld
     {
-        T AddEntity<T>(T entity);
-        T GetEntity<T>(int id);
-        T RemoveEntity<T>(T entity);
+        T AddThing<T>();
+        T AddThing<T>(T thing);
+
+        T GetThing<T>(int id);
+        T RemoveThing<T>(T Thing);
 
     }
 }

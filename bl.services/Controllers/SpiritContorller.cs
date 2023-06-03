@@ -14,7 +14,10 @@ public class SpiritController : ControllerBase
 
     IThink _think;
 
-    public SpiritController(IThink think) => _think = think;
+    public SpiritController() 
+    {
+        
+    } 
 
     [HttpGet]
     public async Task<object> Get(DaprClient daprClient)
