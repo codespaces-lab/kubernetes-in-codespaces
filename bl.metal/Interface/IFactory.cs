@@ -1,16 +1,33 @@
 namespace snff.bl.metal;
 
 using System;
+using System.Collections.Generic;
 
-public interface IFactory<T>
+public interface IFactory<T> where T : new()
 {
-    public static IAgentEntity<T> New<T>() 
+    public T New()
     {
-        return null;
+        return new T();
     }
-    public static IAgentEntity<T> New(IWorld world) 
+
+    public T New(IWorld world)
     {
-        return null;
+        var neo = world.AddThing<T>(new T());
+
+        return neo;
+    }
+
+    public List<T> New(IWorld world, long qty)
+    {
+        var list = new List<T>();
+
+        for (int i = 0; i < qty; i++)
+        {
+            var neo = world.AddThing<T>(new T());
+            list.Add(neo);
+        }
+
+        return list;
     }
 
 }

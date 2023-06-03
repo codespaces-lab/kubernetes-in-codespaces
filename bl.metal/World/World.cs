@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace snff.bl.metal;
 
-public class World : IWorld, IThink
+public class World : IWorld, IThink<T>
 {
 
     public World()
@@ -11,22 +11,23 @@ public class World : IWorld, IThink
 
     }
 
-    T IWorld.AddEntity<T>(T entity)
+    T IWorld.AddThing<T>()
+      where T: new()
+    {
+        var thing = new T();
+    }
+
+    T IWorld.AddThing<T>(T thing)
     {
         throw new System.NotImplementedException();
     }
 
-    T IWorld.GetEntity<T>(int id)
+    T IWorld.GetThing<T>(int id)
     {
         throw new System.NotImplementedException();
     }
 
-    T IWorld.RemoveEntity<T>(T entity)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    Task<IThink.IResult> IThink.Think()
+    T IWorld.RemoveThing<T>(T Thing)
     {
         throw new System.NotImplementedException();
     }

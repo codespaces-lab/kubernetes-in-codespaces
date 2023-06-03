@@ -1,34 +1,15 @@
 namespace snff.bl.metal;
 
 using System.Threading.Tasks;
+using Openmetrics;
 
-
-public interface IThink
+public interface IThink<T>
 {
-    Task<IThink.IResult> Think();
 
-    public interface IResult
-    {
-        object MetricsForProm {get;set;}
-        int timeTaked {get;set;}
-    }
+    Task<dynamic> Think(dynamic context);
 
-
-
-}
-
-
-
-public interface IThunk
-{
-    Task<IThink.IResult> Thunk();
-
-    public interface IResult
-    {
-        
-    }
-
-
+    IThink<T> Next { get;  }
+    IThink<T> Previous { get; set; }
 
 }
 

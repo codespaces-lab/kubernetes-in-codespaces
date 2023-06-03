@@ -9,12 +9,13 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "daprd-debug",
-            "program": "${workspaceFolder}/weather/bin/Debug/net5.0/bs.services.dll",
+            "program": "${workspaceFolder}/bin/Debug/net6.0/snff.bl.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
             "console": "internalConsole",
-            "postDebugTask": "daprd-down"
+            "postDebugTask": "daprd-down",
+            "justMyCode": true
         }
     ]
 }
