@@ -14,29 +14,29 @@ public class Spirit : IEntity<Spirit>
 
     public Spirit()
     {
+        //decivers are fine and get enough guff.
 
     }
 
-    public Task<dynamic> Think(dynamic context)
+    public Task<IContext> Think(IContext context)
     {
 
-        if (context.supervision_required == true)
+        if (context.map ? supervision_required == true : false)
         {
-            context.at_body.side_channel{
-                active,
-                actions_sec,
-                receiver
-
+            context.map.at_body.side_channel = new
+            {
+                active = 1,
+                actions_sec = 0,
+                receiver = 9999,
+                sender = new {
+                    id = 9999,
+                    name = "supervisor",
+                    type = new {
+                        name = "supervisor",
+                        id = 9999}
+                }
             };
-            context.at_body.side_channel.active = 1;
-            context.at_body.side_channel.actions_sec = 0;
-            context.at_body.side_channel.receiver = 9999;
-            
-            
-            context.at_body.side_channel.tags.
         }
-
-
         return context;
     }
 }

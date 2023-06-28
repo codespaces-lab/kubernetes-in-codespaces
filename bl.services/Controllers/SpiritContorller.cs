@@ -20,9 +20,9 @@ public class SpiritController : ControllerBase
     } 
 
     [HttpGet]
-    public async Task<object> Get(DaprClient daprClient)
+    public async Task<dynamic> Get(DaprClient daprClient)
     {
-        return await _think.Think();
+        
     }
 }
 

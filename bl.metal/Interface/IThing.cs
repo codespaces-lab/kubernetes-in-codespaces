@@ -6,11 +6,7 @@ namespace snff.bl.metal;
 public interface IThing<T> : IFactory<T>
     where T : new()
 {   
-
-
+    public WCID Id { get; set; }
     public string Name => "";
-
-
-
 }
 
