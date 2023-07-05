@@ -7,6 +7,10 @@ public class World : IWorld, IThink<T>, IThing<T>
 {
     HashSet<IThink<T>> _thinks = new HashSet<IThink<T>>();
     HashSet<Thing<T>> _things = new HashSet<IThing<T>>();
+
+    public HashSet<Thing<T>> Things { get => _things; set => _things = value; }
+    public HashSet<IThink<T>> Thinks { get => _thinks; set => _thinks = value; }
+
     public World()
     {
 
@@ -16,48 +20,48 @@ public class World : IWorld, IThink<T>, IThing<T>
       where T : new()
     {
         var thing = new T();
-        _things.Add(thing);
+        Things.Add(thing);
         return thing;
     }
 
     T IWorld.AddThing<T>(T thing)
     {
-        _things.Add(thing);
+        Things.Add(thing);
         return thing;
     }
 
     T IWorld.GetThing<T>(int id)
     {
-        return _things.FirstOrDefault(t => t.id == id);
+        return Things.FirstOrDefault(t => t.id == id);
     }
 
     T IWorld.RemoveThing<T>(T thing)
     {
-        _things.Remove(thing);
+        Things.Remove(thing);
     }
 
     T IWorld.AddThink<T>()
       where T : new()
     {
         var think = new T();
-        _thinks.Add(think);
+        Thinks.Add(think);
         return think;
     }
 
     T IWorld.AddThink<T>(T think)
     {
-        _thinks.Add(think);
+        Thinks.Add(think);
         return think;
     }
 
     T IWorld.GetThink<T>(int id)
     {
-        return _thinks.FirstOrDefault(t => t.id == id);
+        return Thinks.FirstOrDefault(t => t.id == id);
     }
 
     T IWorld.RemoveThink<T>(T think)
     {
-        _thinks.Remove(think);
+        Thinks.Remove(think);
     }
 }
 

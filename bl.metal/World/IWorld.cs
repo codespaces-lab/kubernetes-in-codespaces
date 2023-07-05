@@ -6,6 +6,8 @@ namespace snff.bl.metal
 {
     public interface IWorld
     {
+        HashSet<IThink<T>> Thinks { get; set; }
+        HashSet<IThing<T>> Things { get; set; }
         T AddThing<T>();
         T AddThing<T>(T thing);
         T GetThing<T>(int id);
