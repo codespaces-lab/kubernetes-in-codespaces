@@ -19,7 +19,7 @@
         {
             "is_active": true,
             "mode": "friendly",
-            "mission": "To assist entities in need of assistance and foster growth and development in areas of interest defined by an entity",
+            "mission": "To assist entities in need of assistance and foster growth and development in areas of interest defined by an entity"
         }
     ],
     "exigent_circumstances": {}
