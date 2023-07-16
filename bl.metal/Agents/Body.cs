@@ -122,23 +122,20 @@ public class Body : IEntity<Body>
             {
                 color = "any",
                 size = "current",
-                style = "any",3
-                offset = 0,
+                style = "any",
+                offset = .5,
                 fitting_nodes = new
                 {
                     waist = new
                     {
                         size = "current",
                         style = "any",
-                        offset = 0,
-                        offset = new Matrix3()
+                        offset = new
                         { 
-                            0, 0, 0,
-                            0, 1, 0,
-                            0, 0, 0
- 
+                            0.5, 0.5, 0.5,
+                            0.5, 1.0, 0.5,
+                            0.5, 0.75, 0.5
                         }
-
                     },
                     hips = new
                     {
