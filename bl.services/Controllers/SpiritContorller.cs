@@ -30,7 +30,7 @@ public class SpiritController : ControllerBase, IThink
         {
             lock (_world)
             {
-kjm              var qt = Config.SpiritCount;
+                var qt = Config.SpiritCount;
                 _spirits.AddRange(Enumerable.Range(0, qt).Select(i => new Spirit(i)));
                 _world.Thinks.AddRange(_spirits);
             }
