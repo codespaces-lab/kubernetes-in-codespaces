@@ -10,7 +10,7 @@ namespace snff.bl.services;
 
 [ApiController]
 [Route("[controller]")]
-public class SpiritController : ControllerBase, IThink
+public class SpiritController : ControllerBase, IController, IThink
 {
     static HashSet<IThink<Spirit>> _spirits = new HashSet<IThink<Spirit>>();
 

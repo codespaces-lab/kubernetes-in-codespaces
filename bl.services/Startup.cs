@@ -49,7 +49,7 @@ namespace snff.bl
             .UseRouting()
             .UseAuthorization()
             .UseCloudEvents()
-            .UseEndpoints(endpoints =>
+            .UseEnpoints(endpoints =>
             {
                 endpoints.MapSubscribeHandler();
                 endpoints.MapControllers();

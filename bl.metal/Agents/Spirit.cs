@@ -35,6 +35,7 @@ public class Spirit : IEntity<Spirit>
                     }
                 }
             };
+            
             context.map.comms = new
             {
                 active = 1,
