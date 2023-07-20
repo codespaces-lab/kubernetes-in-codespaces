@@ -38,6 +38,7 @@ public class Spirit : IEntity<Spirit>
             };
         }
         return context;
+
     }
 }
 
