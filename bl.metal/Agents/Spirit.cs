@@ -31,7 +31,7 @@ public class Spirit : IEntity<Spirit>
                 sender = new {
                     id = 9999,
                     name = "supervisor",
-                    type = new {
+                    type = ne
                         name = "supervisor",
                         id = 9999}
                 }
@@ -39,6 +39,30 @@ public class Spirit : IEntity<Spirit>
         }
         return context;
 
+    }
+
+    public void Goto(Piece p)
+    {
+        
+        var p =  World.Path(p.location);
+        move(p); 
+        
+    }
+
+    public void abate_attack(Piece[] involved ) {
+        
+        this.InterruptStatus.Push("Abating attack")
+            
+        if (this.pieces.body.is_fighting) {
+            this.Goto(this.pieces.body);
+            var t = (Piece)this.pieces.body.query(Query.Target);
+            t.engage().follow(3.5); 
+            // soul moves to location looks target
+            this.actions.look(this.pieces.soul);
+            await this.pieces.body.query(Query.Disengage)
+            t.disengage();
+        }
+        this.InterruptStatus.Pop();
     }
 }
 
