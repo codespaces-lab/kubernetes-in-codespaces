@@ -64,7 +64,7 @@ void use_body_nodes(IContext context)
             style = "not_belly_pot",
             offset_from_center = new
             {
-                2,5,2, //this row is better
+                2,3,2, //this row is better
                 5,1,5, //than this row
                 2,2,2  //and stuf
             }
@@ -75,7 +75,7 @@ void use_body_nodes(IContext context)
             style = "not_muffin_top",
             offset_from_center = new
             {
-                3,5,3, //this row is better
+                3,3,3, //this row is better
                 5,1,5, //than this row
                 3,2,3  //and stuf
             }
