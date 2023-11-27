@@ -14,6 +14,18 @@
             "problemMatcher": "$msCompile"
         },
         {
+            "label": "build-bl-mud",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/bl.mud/bl.mud.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "publish",
             "command": "dotnet",
             "type": "process",
