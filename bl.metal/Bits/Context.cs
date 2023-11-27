@@ -1,6 +1,6 @@
 using System;
 
-namespace bl.metal.Bits
+namespace bl.well.Bits
 {
     public class Context: IContext
     {

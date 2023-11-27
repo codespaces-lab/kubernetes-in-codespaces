@@ -1,4 +1,4 @@
-namespace snff.bl.metal;
+namespace snff.bl.well;
 
 using System.Threading.Tasks;
 using Openmetrics;

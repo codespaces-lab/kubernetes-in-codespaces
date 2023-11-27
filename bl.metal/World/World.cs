@@ -1,7 +1,7 @@
 
 using System.Threading.Tasks;
 
-namespace snff.bl.metal;
+namespace snff.bl.well;
 
 public class World : IWorld, IThink<T>, IThing<T>
 {

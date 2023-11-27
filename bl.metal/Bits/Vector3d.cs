@@ -1,4 +1,4 @@
-namespace snff.bl.metal;
+namespace snff.bl.well;
 
 public class Vector3d
 {

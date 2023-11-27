@@ -1,6 +1,6 @@
 using System;
 using System.Numerics.BitVector;
-namespace snff.bl.metal
+namespace snff.bl.well
 {
     public struct WCID
     {        

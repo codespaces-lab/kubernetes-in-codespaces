@@ -2,7 +2,7 @@
 
 using System;
 
-namespace snff.bl.metal
+namespace snff.bl.well
 {
     public interface IWorld
     {

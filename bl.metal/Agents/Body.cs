@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Openmetrics;
 
-namespace snff.bl.metal;
+namespace snff.bl.well;
 
 public class Body : IEntity<Body>
 {

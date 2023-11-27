@@ -1,2 +1,2 @@
-# Spirit
+# Spiritd
 GET http://localhost:5000/spirit HTTP/1.1
