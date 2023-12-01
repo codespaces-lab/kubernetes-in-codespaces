@@ -1,4 +1,6 @@
+
 namespace snff.bl.metal
+
 using System;
 
 

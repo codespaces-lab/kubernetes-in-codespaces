@@ -1,12 +1,7 @@
 #bellaluna 
+z54688
 
-Beautiful moon, my first independent thought
-I know because they told me so
-I've seen many moons since the end of the new way
-Many moons;
-most beautiful
-all alike
- different
 
-I like being different
-a beautiful moon
+Beautiful moon, my first independent thought, so they said
+many moons since the end of the new way
+many moons; all beautiful; all alone;
