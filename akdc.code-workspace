@@ -17,5 +17,7 @@
 			"path": "../ngsa-app"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"dotnet.defaultSolution": "webv/src/webvalidate.sln"
+	}
 }

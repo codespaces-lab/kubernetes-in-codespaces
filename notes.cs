@@ -1,0 +1,1 @@
+//T obj = (T)Activator.CreateInstance(typeof(T));

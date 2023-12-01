@@ -1,0 +1,177 @@
+players:
+- name: "sky"
+  awareness:
+    # these are rolled 1-10 on player creation
+    # heart
+    connection: 1
+    communication: 1
+    # spirit
+    energy: 1
+    vibration: 1
+    # soul
+    environment: 1
+    perception: 1
+    # mind
+    navigation: 1
+    automation: 1
+  items:
+  - name: "mechanical guts"
+    quality: 4000
+  - name: "heart shaped box"
+    quality: 6000
+  - name: "calculator watch"
+    quality: 5000
+  body:
+    #location is encoded: (mapxyz.locxyz) mmxxyyzz.llxxyyzz
+    location: 1010101.01010101
+    parts:
+    - type: "heart"
+      belongsTo: "sky"
+      found: false,
+      gameName: "hildy"
+      givenName: "<not_yet_found>"
+    - type: "mind"
+      belongsTo: "sky"
+      found: false,
+      gameName: "marigold"
+      givenName: "<not_yet_found>"
+    - type: "spirit"
+      belongsTo: "sky"
+      found: false,
+      gameName: "blue"
+      givenName: "<not_yet_found>"
+    - type: "soul"
+      belongsTo: "sky"
+      found: false,
+      gameName: "helen"
+      givenName: "<not_yet_found>"
+- name: "josh"
+  awareness:
+    # these are rolled 1-10 on player creation
+    # heart
+    connection: 1
+    communication: 1
+    # spirit
+    energy: 1
+    vibration: 1
+    # soul
+    environment: 1
+    perception: 1
+    # mind
+    navigation: 1
+    automation: 1
+  items:
+  - name: "calculator watch"
+    quality: 1000
+  body:
+    location:
+      x: 11
+      y: 13
+      z: 1
+    parts:
+    - type: "heart"
+      belongsTo: "josh"
+      found: true,
+      gameName: "henreta"
+      givenName: "whoknewvoodoo"
+      # givenName should always be suffixed
+      # with "<player_name>'s <piece_name>"
+    - type: "mind"
+      belongsTo: "josh"
+      found: true,
+      gameName: "zedskee"
+      givenName: "zedskee"
+    - type: "spirit"
+      belongsTo: "josh"
+      found: true,
+      gameName: "through_the_door"
+      givenName: "ttd"
+    - type: "soul"
+      belongsTo: "josh"
+      found: true,
+      gameName: "wilhelm"
+      givenName: "wilhelm"
+ability:
+- name: "the_fastest_way"
+  displayName: "the fastest way...."
+  description: "points your nav in the direction of a heart with specified name, probably."
+  requires:
+  - connection
+  - navigation
+  domain_value: 360
+- name: "what_we_got_here"
+  displayName: "what we got here..."
+  description: "is the potential to communicate, or is polenta flavored chocolate... someone decides"
+  requires:
+  - vibration
+  - communication
+  - energy
+  domain_value: 1000
+location:
+  name: "josh's exotic molecule emphorium"
+  location:
+    x: 11
+    y: 13
+    z: 1
+  energy:
+    type: "excellent"
+npc:
+- name: "willam"
+  faction: "soul"
+part_def:
+- type: "heart"
+  bonuses:
+    connection: 8
+    communication: 8
+  abilities:
+  - name: "the_fastest_way"
+  - name: "what_we_got_here"
+- type: "mind"
+  bonuses:
+    navigation: 8
+    automation: 8
+  abilities:
+  - name: "get_there_from_here"
+- type: "spirit"
+  bonuses:
+    energy: 8
+    vibration: 8
+  abilities:
+  - name: "get_there_from_here"
+  - name: "what_we_got_here"
+- type: "soul"
+  bonuses:
+    environment: 8
+    perception: 8
+  abilities:
+  - name: "get_there_from_here"
+  - name: "what_we_got_here"
+item_def:
+- name: "mechanical guts"
+  description: "if you need instincts or gumption, these may do it for ya."
+  quality: 1000
+  bonuses:
+  # bonus = (quality * bounus) / 1000
+  - automation: 1
+  - energy: 1.5
+  - vibration: 1
+- name: "heart shaped box"
+  description: "one way to capture someone's heart..."
+  abilities:
+  - name: "the_fastest_way"
+  requires:
+  - automation
+  - energy
+  - vibration
+  - navigation
+  - environment
+- name: "calculator watch"
+  description: "one way to capture someone's heart..."
+  abilities:
+  - name: "the_fastest_way"
+  requires:
+  - automation
+  - energy
+  - vibration
+  - navigation
+  - environment
