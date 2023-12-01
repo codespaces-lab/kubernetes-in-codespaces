@@ -1,4 +1,4 @@
-namespace snff.bl.well;
+namespace snff.bl.metal
 
 
 public partial class MetricSet : IThink<MetricSet>.IResult

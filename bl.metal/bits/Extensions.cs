@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 
-namespace snff.bl.well;
+namespace snff.bl.metal;
 
 public static class Ext
 {

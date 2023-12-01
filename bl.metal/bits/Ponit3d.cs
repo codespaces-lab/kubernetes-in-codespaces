@@ -1,4 +1,4 @@
-namespace snff.bl.well;
+namespace snff.bl.metal
 
 public class Point3d
 {

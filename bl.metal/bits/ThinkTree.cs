@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace snff.bl.well;
+namespace snff.bl.metal
 
 
 // public class ThinkTree<T>
