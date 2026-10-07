@@ -373,6 +373,48 @@ rm -rf dapr-app
     - Rancher provides support - including 24x7 (for a fee)
     - K3s has a vibrant community
     - K3s is a CNCF sandbox project
+   
+## Troubleshooting
+
+### Codespaces ports are not accessible
+
+If a service is running but you cannot access it from your browser:
+
+- Open the **Ports** tab in the Codespaces terminal.
+- Find the port used by the service.
+- Click **Open in Browser** for the corresponding port.
+- If the port is not listed, verify that the service is running and listening on the expected port.
+
+### Kubernetes resources are not starting
+
+If a Kubernetes deployment does not start as expected:
+
+- Check the status of the pods:
+
+```bash
+kubectl get pods -A
+
+- Inspect a pod that is not running:
+
+```bash
+kubectl describe pod <pod-name> -n <namespace>
+```
+
+- Check the pod logs:
+
+```bash
+kubectl logs <pod-name> -n <namespace>
+```
+
+### Grafana dashboard is not accessible
+
+If Grafana is running but the dashboard cannot be opened:
+
+- Open the **Ports** tab in Codespaces.
+- Verify that port `32000` is available.
+- Click **Open in Browser** for the Grafana port.
+- If Grafana is not running, verify that the required setup commands completed successfully.
+
 
 ### Engineering Docs
 
